@@ -5,5 +5,6 @@ import authReducer from '../fetures/auth/authSlice'
 export const store = configureStore({
   reducer: {
     meal: mealReducer,
+    auth: authReducer
   }
 })
