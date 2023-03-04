@@ -15,14 +15,15 @@ const Header = () => {
             <div className="flex items-center justify-between h-16">
               <div className="w-full justify-between flex items-center">
                 <a className="flex-shrink-0" href="/">
-                  <img className="w-8 h-8" src="/icons/rocket.svg" alt="Workflow" />
+                  {/* <img className="w-8 h-8" src="/icons/rocket.svg" alt="Workflow" /> */}
+                  <h1 className="text-2xl text-gray-300 drop-shadow-lg font-medium">What's for Dinner?</h1>
                 </a>
                 <div className="hidden md:block">
                   <div className="flex items-baseline ml-10 space-x-4">
-                    <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                    <a className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
                       Home
                     </a>
-                    <a className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                    <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
                       Gallery
                     </a>
                     <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">

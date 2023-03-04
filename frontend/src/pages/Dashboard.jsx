@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import DashboardShell from '../components/dashboardComps/DashboardShell';
 import Header from '../components/generalComps/Header';
 import ButtonRandomMeal from '../components/dashboardComps/ButtonRandomMeal';
+import DisplayMeal from '../components/dashboardComps/DisplayMeal';
 
 const Dashboard = () => {
   // const { meal } = useSelector((state) => state.meals);
@@ -17,26 +18,26 @@ const Dashboard = () => {
 
   const [randomMeal, setRandomMeal] = useState([]);
 
-  const fetchData = async () => {
+  const fetchMeal = async () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then(res => res.json())
       .then(data => setRandomMeal(data.meals)
       )
   }
-  useEffect(() => {
-    fetchData()
-  }, [])
+ 
 
   return (
     <div>
       <Header />
       <div>
-        <ul>
-          {randomMeal.map(meal => (
-            <li key={meal.idMeal}>{meal.strMeal}</li>
-          ))}
-        </ul>
-
+        <ButtonRandomMeal
+        fetchMeal={fetchMeal}
+        />
+        <div className='flex flex-col content-center'>
+          <DisplayMeal
+          randomMeal={randomMeal} 
+          />
+      </div>
       </div>
     </div>
   )
