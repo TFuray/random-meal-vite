@@ -1,8 +1,11 @@
 import {getRandomMeal} from '../features/meal/mealSlice';
+import Header from '../components/generalComps/Header';
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      <Header />
+    </div>
   )
 }
 
