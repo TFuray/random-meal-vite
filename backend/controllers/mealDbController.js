@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler")
-const axios = require("axios")
+
 
 //@desc      Get random meal
 //@route     GET /api/meals/random
@@ -11,20 +11,21 @@ const axios = require("axios")
 //   }))
 
 
-const getRandomMeal = asyncHandler(async (req, res) => {
+const getRandomMeal = async () => {
   fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
     .then(res => res.json())
-    .then(data => {
-      let meal = data.meals[0]
-      
-    })
-})
+    .then(data => res.status(200).json(data.meals))
+}
+
+// const getRandomMeal = 
+//   axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
+//     .then(response => console.log(response.data))
 
 //@desc      Set Meal
 //@route     POST /api/meals
-const setMeal = asyncHandler(async (req, res) => {
+// const setMeal = asyncHandler(async (req, res) => {
   
-})
+// })
 
 
 module.exports = {

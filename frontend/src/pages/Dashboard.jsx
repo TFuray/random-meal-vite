@@ -7,38 +7,46 @@ import ButtonRandomMeal from '../components/dashboardComps/ButtonRandomMeal';
 import DisplayMeal from '../components/dashboardComps/DisplayMeal';
 
 const Dashboard = () => {
-  // const { meal } = useSelector((state) => state.meals);
-  // const [randomMeal, setRandomMeal] = useState(null);
-  // const dispatch = useDispatch();
-
-  // const handleRandomClick = () => {
-  //   const randMeal = dispatch(getRandomMeal())
-  //   setRandomMeal(randMeal)
-  // }
-
   const [randomMeal, setRandomMeal] = useState([]);
+  const [ingList, setIngList] = useState([])
 
-  const fetchMeal = async () => {
+  const onClick = async () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then(res => res.json())
       .then(data => setRandomMeal(data.meals)
+
       )
   }
- 
+
+  const getIng = () => {
+    for (let i = 1; i < 20; i++) {
+      if (randomMeal['strIngredient' + i] != '') {
+        setIngList(randomMeal['strIngredient' + i])
+      }
+    }
+    
+  }
 
   return (
     <div>
       <Header />
-      <div>
-        <ButtonRandomMeal
-        fetchMeal={fetchMeal}
-        />
-        <div className='flex flex-col content-center'>
+      <section>
+        <div className=''>
+          {console.log(randomMeal[0])}
           <DisplayMeal
-          randomMeal={randomMeal} 
+            randomMeal={randomMeal}
           />
-      </div>
-      </div>
+        </div>
+        <div>
+          <h3>Ingredients:</h3>
+            {console.log(getIng())}
+        </div>
+        <div>
+          <ButtonRandomMeal
+            onClick={onClick}
+          />
+        </div>
+      </section>
     </div>
   )
 }
