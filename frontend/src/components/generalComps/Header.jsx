@@ -21,16 +21,16 @@ const Header = () => {
                 <div className="hidden md:block">
                   <div className="flex items-baseline ml-10 space-x-4">
                     <a className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                      Home
+                      Random Meal
                     </a>
                     <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                      Gallery
+                      Saved Meals
                     </a>
                     <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                      Content
+                      Share Meal
                     </a>
                     <a className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                      Contact
+                      User Meal
                     </a>
                   </div>
                 </div>
@@ -52,16 +52,16 @@ const Header = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
-                Home
+                Random Meal
               </a>
               <a className="text-gray-800 dark:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
-                Gallery
+                Saved Meals
               </a>
               <a className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
-                Content
+                Share Meal
               </a>
               <a className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
-                Contact
+                User Meals
               </a>
             </div>
           </div>

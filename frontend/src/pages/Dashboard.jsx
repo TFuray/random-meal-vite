@@ -6,6 +6,7 @@ import Header from '../components/generalComps/Header';
 import ButtonRandomMeal from '../components/dashboardComps/ButtonRandomMeal';
 import DisplayMeal from '../components/dashboardComps/DisplayMeal';
 import DisplayIngredients from '../components/dashboardComps/DisplayIngredients';
+import ButtonSave from '../components/dashboardComps/ButtonSave';
 
 const Dashboard = () => {
   const [randomMeal, setRandomMeal] = useState([]);
@@ -38,10 +39,11 @@ const Dashboard = () => {
            randomMeal={randomMeal}
           />
         </div>
-        <div>
+        <div className='flex justify-center mt-24'>
           <ButtonRandomMeal
             onClick={onClick}
           />
+          <ButtonSave />
         </div>
       </section>
     </div>

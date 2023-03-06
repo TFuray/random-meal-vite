@@ -10,7 +10,7 @@ const DisplayMeal = ({ randomMeal }) => {
           return (
             <div>
               <ul className="grid grid-cols-4 place-items-center">
-                <li className="grid col-span-4 place-content-center" key={idMeal}><h2 className="grid place-content-center text-3xl mb-5 mt-5 font-semibold">{strMeal}:</h2> <img className="" style={{ width: '350px' }} src={strMealThumb} alt="meal thumbnail" />
+                <li className="grid col-span-4 place-content-center" key={idMeal}><h2 className="grid place-content-center text-3xl mb-5 mt-5 font-semibold">{strMeal}:</h2> <img className="mb-5" style={{ width: '350px' }} src={strMealThumb} alt="meal thumbnail" />
                 </li>
 
                 <li className="grid w-1/2 "><span className="font-bold grid">{strIngredient1}</span> {strMeasure1}</li>
@@ -34,7 +34,8 @@ const DisplayMeal = ({ randomMeal }) => {
                 <li className="grid w-1/2 "><span className="font-bold grid">{strIngredient19}</span> {strMeasure19}</li>
                 <li className="grid w-1/2 "><span className="font-bold grid">{strIngredient20}</span> {strMeasure20}</li>
               </ul>
-                <p className="text-center w-1/3 ml-1/3">{strInstructions}</p>
+                <h2 className="text-center font-bold text-2xl my-8 w-1/2 mx-auto">Instructions</h2>
+                <p className="text-center w-3/5 mx-auto mb-5">{strInstructions}</p>
             </div>
           )
         })}
