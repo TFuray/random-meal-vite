@@ -5,6 +5,7 @@ import DashboardShell from '../components/dashboardComps/DashboardShell';
 import Header from '../components/generalComps/Header';
 import ButtonRandomMeal from '../components/dashboardComps/ButtonRandomMeal';
 import DisplayMeal from '../components/dashboardComps/DisplayMeal';
+import DisplayIngredients from '../components/dashboardComps/DisplayIngredients';
 
 const Dashboard = () => {
   const [randomMeal, setRandomMeal] = useState([]);
@@ -24,7 +25,7 @@ const Dashboard = () => {
         setIngList(randomMeal['strIngredient' + i])
       }
     }
-    
+
   }
 
   return (
@@ -34,12 +35,13 @@ const Dashboard = () => {
         <div className=''>
           {console.log(randomMeal[0])}
           <DisplayMeal
-            randomMeal={randomMeal}
+           randomMeal={randomMeal}
           />
         </div>
         <div>
-          <h3>Ingredients:</h3>
-            {console.log(getIng())}
+          <DisplayIngredients
+            
+          />
         </div>
         <div>
           <ButtonRandomMeal

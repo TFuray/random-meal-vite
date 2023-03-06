@@ -1,15 +1,14 @@
+const DisplayIngredients = ({randomMeal, getIng}) => {
 
-const DisplayIngredients = ({randomMeal}) => {
+  
   return (
     <ul>
-      <li className="font-semibold">Ingredients:</li>
-      {randomMeal.forEach(element => {
-        if (randomMeal['strIngredient' + element] != '') {
-          return <li>{randomMeal['strIngredient' + element]}</li>
-        }
-      })} 
+      {/* <li className="font-semibold">Ingredients:</li>
+      {console.log(randomMeal)}
+      {randomMeal.length > 0 ? randomMeal.map(): null}  */}
     </ul>
   )
 }
 
 export default DisplayIngredients
+

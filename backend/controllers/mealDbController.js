@@ -1,8 +1,10 @@
+const axios = require('axios')
 const asyncHandler = require("express-async-handler")
 
 
-//@desc      Get random meal
-//@route     GET /api/meals/random
+
+// @desc      Get random meal
+// @route     GET /api/meals/random
 // const getRandomMeal = asyncHandler (axios.get("https://www.themealdb.com/api/json/v1/1/random.php")
 //   .then(response => {
 //     console.log(response.data)
@@ -10,12 +12,21 @@ const asyncHandler = require("express-async-handler")
 //     console.log(err)
 //   }))
 
+const mealApi = axios.create({
+  baseURL: "http://www.themealdb.com/api/json/v1/1/"
+})
 
 const getRandomMeal = async () => {
-  fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
-    .then(res => res.json())
-    .then(data => res.status(200).json(data.meals))
+  const response = await mealApi.get("/random.php")
+  return response.data
 }
+
+
+// const getRandomMeal = async () => {
+//   fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
+//     .then(res => res.json())
+//     .then(data => res.status(200).json(data.meals))
+// }
 
 // const getRandomMeal = 
 //   axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`)
