@@ -32,15 +32,10 @@ const Dashboard = () => {
     <div>
       <Header />
       <section>
-        <div className=''>
+        <div className='grid'>
           {console.log(randomMeal[0])}
           <DisplayMeal
            randomMeal={randomMeal}
-          />
-        </div>
-        <div>
-          <DisplayIngredients
-            
           />
         </div>
         <div>
