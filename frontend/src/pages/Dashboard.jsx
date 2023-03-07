@@ -13,6 +13,10 @@ const Dashboard = () => {
 
   const { user } = useSelector(state => state.auth)
 
+  useEffect(() => {
+    onClick()
+    console.log('1')
+  }, [user])
 
   const onClick = async () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
