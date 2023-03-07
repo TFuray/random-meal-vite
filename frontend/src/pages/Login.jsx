@@ -1,3 +1,4 @@
+import Header from '../components/generalComps/Header'
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -54,6 +55,7 @@ const Login = () => {
   }
 
   return (
+    <>
     <div className='flex justify-center'>
       <div className='card bg-primary w-80 h-80 place-content-center shadow-lg'>
         <section className='text-center'>
@@ -93,6 +95,7 @@ const Login = () => {
         </section>
       </div>
     </div>
+</>
   )
 }
 

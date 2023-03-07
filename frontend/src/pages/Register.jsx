@@ -63,6 +63,7 @@ const Register = () => {
   }
 
   return (
+    <>
     <div className="flex justify-center">
       <div className='card bg-primary w-80 h-96 place-content-center shadow-lg'>
         <section className='text-center'>
@@ -124,6 +125,7 @@ const Register = () => {
         </section>
       </div>
     </div>
+    </>
   )
 }
 
