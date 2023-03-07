@@ -1,5 +1,6 @@
 const axios = require('axios')
 const asyncHandler = require("express-async-handler")
+const SavedMeal = require('../models/savedMealModel')
 
 
 // @desc      Get random meal
@@ -17,9 +18,21 @@ const mealApi = axios.create({
 
 const getRandomMeal = async () => {
   const response = await mealApi.get("/random.php")
+  console.log(response.data)
   return response.data
 }
 
+// @desc  set saved meal
+// @route POST /api/meals/saved
+const setSavedMeal = asyncHandler(async (req, res) => {
+  const meal = await SavedMeal.create({
+    user: req.user.id,
+    meal: req.body.meal
+  })
+  res.status(200).json(meal)
+})
+
 module.exports = {
-  getRandomMeal
+  getRandomMeal,
+  setSavedMeal
 }

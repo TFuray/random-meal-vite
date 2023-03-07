@@ -13,8 +13,20 @@ const getRandomMeal = async (token) => {
   return response.data
 }
 
+// Save Meal
+const saveMeal = async (mealData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.post(API_URL, mealData, config)
+  return response.data
+}
+
 const mealService = {
-  getRandomMeal
+  getRandomMeal,
+  saveMeal
 }
 
 export default mealService

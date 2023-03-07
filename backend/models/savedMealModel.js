@@ -6,13 +6,13 @@ const savedMealModelSchema = new mongoose.Schema({
     required: true,
     ref: "User"
   },
-  meals: [{
+  meal: {
     type: String
-  }]
+  }
 },
   {
     timestamps: true
   }
 )
 
-module.exports = mongoose.model('SavedMeals', savedMealModelSchema);
+module.exports = mongoose.model('SavedMeal', savedMealModelSchema);

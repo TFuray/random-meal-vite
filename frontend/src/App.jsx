@@ -8,8 +8,9 @@ import Register from './pages/Register'
 import Header from './components/generalComps/Header'
 import SavedMeals from './pages/SavedMeals'
 
-
 function App() {
+  
+
   return (
     <>
       <Router>

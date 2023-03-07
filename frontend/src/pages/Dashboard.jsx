@@ -10,21 +10,25 @@ const Dashboard = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [randomMeal, setRandomMeal] = useState([]);
+  const [showBtn, setShowBtn] = useState(false)
 
   const { user } = useSelector(state => state.auth)
 
-  useEffect(() => {
-    onClick()
-    console.log('1')
-  }, [user])
+  // useEffect(() => {
+  //   onClick()
+  //   console.log('1')
+  // }, [user])
 
   const onClick = async () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then(res => res.json())
       .then(data => setRandomMeal(data.meals)
-
       )
+    setShowBtn(true)
   }
+  // const onSave = async () => {
+
+  // }
 
   return (
     <div>
@@ -38,9 +42,8 @@ const Dashboard = () => {
           <ButtonRandomMeal
             onClick={onClick}
           />
-          {randomMeal !== [] ? (
-            <ButtonSave />
-          ) : (null)}
+          {showBtn ? <ButtonSave randomMeal={randomMeal}/> : null } 
+
         </div>
       </section>
     </div>
