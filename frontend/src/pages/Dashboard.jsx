@@ -11,6 +11,8 @@ const Dashboard = () => {
   const dispatch = useDispatch()
   const [randomMeal, setRandomMeal] = useState([]);
   const [showBtn, setShowBtn] = useState(false)
+  const [clicked, setClicked] = useState(false)
+
 
   const { user } = useSelector(state => state.auth)
 
@@ -41,8 +43,9 @@ const Dashboard = () => {
         <div className='flex justify-center mt-24'>
           <ButtonRandomMeal
             onClick={onClick}
+            setClicked={setClicked}
           />
-          {showBtn ? <ButtonSave randomMeal={randomMeal}/> : null } 
+          {showBtn ? <ButtonSave clicked={clicked} setClicked={setClicked} randomMeal={randomMeal}/> : null } 
 
         </div>
       </section>

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import mealService from './mealService'
+import mealService from '../meal/mealService'
 import { extractErrorMessage } from '../../../utils'
 
 const initialState = {
-  meal: null,
+  meal: '',
 }
 
 // Save meal
@@ -12,9 +12,9 @@ export const saveMeal = createAsyncThunk(
   async (mealData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
-     return await mealService.saveMeal(mealData, token) 
+      return await mealService.saveMeal(mealData, token)
     } catch (error) {
-     return thunkAPI.rejectWithValue(extractErrorMessage(error)) 
+      return thunkAPI.rejectWithValue(extractErrorMessage(error))
     }
   }
 )
@@ -47,7 +47,7 @@ export const mealSlice = createSlice({
         state.meal = null
       })
       .addCase(saveMeal.fulfilled, (state, action) => {
-        state.meal.push(action.payload)
+        state.meal = (action.payload)
       })
   }
 })

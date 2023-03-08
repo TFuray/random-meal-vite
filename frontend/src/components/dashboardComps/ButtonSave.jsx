@@ -3,30 +3,34 @@ import { useDispatch } from "react-redux"
 import { saveMeal } from '../../features/meal/mealSlice'
 import { Axios } from "axios"
 
-const ButtonSave = ({ randomMeal }) => {
-  // const [meal, setMeal] = useState([])
-
+const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
   const dispatch = useDispatch()
-
+  const meal = JSON.stringify(randomMeal)
   const onSubmit = (e) => {
     e.preventDefault()
 
     dispatch(saveMeal({ meal }))
+  }
+  const handleClick = () => {
+    setClicked(true)
   }
 
   return (
     <section>
       <form onSubmit={onSubmit}>
         <input
-          // className="hidden"
+          className="hidden"
           type="text"
           name="meal"
           id="meal"
-          value={JSON.stringify(randomMeal)}
+          value={meal}
+          readOnly
         />
-        <button type="submit" className="btn btn-secondary flex justify-center space-x-2 ml-5">
+        {!clicked ? <button type="submit" onClick={() => handleClick()} className="btn btn-secondary flex justify-center space-x-2 ml-5">
           Save This Meal
-        </button>
+        </button> : <button type="submit" onClick={() => handleClick()} className="btn btn-secondary btn-disabled flex justify-center space-x-2 ml-5">
+          Meal already Saved
+        </button>}
       </form>
 
 
