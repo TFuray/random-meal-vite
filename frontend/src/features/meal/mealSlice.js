@@ -19,13 +19,13 @@ export const saveMeal = createAsyncThunk(
   }
 )
 
-// Get random meal
-export const getRandomMeal = createAsyncThunk(
+// Get saved meals
+export const getSavedMeals = createAsyncThunk(
   'meal/getRandomMeal',
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
-      return await mealService.getRandomMeal(token)
+      return await mealService.getSavedMeals(token)
     } catch (error) {
       return thunkAPI.rejectWithValue(extractErrorMessage(error))
     }
@@ -37,15 +37,15 @@ export const mealSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(getRandomMeal.pending, (state) => {
+      .addCase(getSavedMeals.pending, (state) => {
         state.meal = null
       })
-      .addCase(getRandomMeal.fulfilled, (state, action) => {
+      .addCase(getSavedMeals.fulfilled, (state, action) => {
         state.meal = action.payload
       })
-      .addCase(getRandomMeal.rejected, (state, action) => {
-        state.meal = null
-      })
+      // .addCase(getSavedMeals.rejected, (state, action) => {
+      //   state.meal = null
+      // })
       .addCase(saveMeal.fulfilled, (state, action) => {
         state.meal = (action.payload)
       })
