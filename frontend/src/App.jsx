@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import { Suspense, laxy} from 'react'
 import 'react-toastify/dist/ReactToastify.css'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'

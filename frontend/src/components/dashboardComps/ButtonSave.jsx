@@ -1,7 +1,5 @@
-import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { saveMeal } from '../../features/meal/mealSlice'
-import { Axios } from "axios"
 
 const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
   const dispatch = useDispatch()
