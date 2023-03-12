@@ -29,13 +29,14 @@ const ShareMeal = () => {
   return (
     <>
       <div>
-        <h1 className="text-center text-2xl font-bold">Upload a Meal</h1>
+        <h1 className="text-center text-2xl font-bold my-5">Upload a Meal</h1>
       </div>
 
-      <div>
-        <form onSubmit={onSubmit}>
-          <div>
+      <div className="">
+        <form className="" onSubmit={onSubmit}>
+          <div className="flex flex-col gap-5 justify-center content-center ">
             <input
+              className="flex self-center input input-bordered w-full max-w-xs"
               type="text"
               name="title"
               placeholder="Title"
@@ -44,16 +45,15 @@ const ShareMeal = () => {
               onChange={e => setTitle(e.target.value)}
             />
 
-            <textarea name="ingredietns" id="ingredietns" value={ingredietns} onChange={e => setIngredietns(e.target.value)} placeholder='ingredietns' type='text' cols="30" rows="10" />
+            <textarea className="flex self-center w-1/2 textarea textarea-bordered " name="ingredietns" id="ingredietns" value={ingredietns} onChange={e => setIngredietns(e.target.value)} placeholder='ingredietns' type='text'  />
 
-            <textarea name="instructions" id="instructions" value={instructions} onChange={e => setInstructions(e.target.value)} placeholder='Instructions' type='text' cols="30" rows="10" />
+            <textarea className="flex self-center w-1/2 textarea textarea-bordered" name="instructions" id="instructions" value={instructions} onChange={e => setInstructions(e.target.value)} placeholder='Instructions' type='text'  />
 
-            <textarea name="description" id="description" value={description} onChange={e => setDescription(e.target.value)} placeholder='Description' type='text' cols="30" rows="10" />
+            <textarea className="flex self-center w-1/2 textarea textarea-bordered" name="description" id="description" value={description} onChange={e => setDescription(e.target.value)} placeholder='Description' type='text'  />
 
-            <input type="file" name="photo" placeholder="Photo" id="photo" value={photo} onChange={e => setPhoto(e.target.value)} />
-          </div>
-          <div>
-            <button type="submit">Add Reciepe</button>
+            <input className="flex self-center input input-bordered w-full max-w-xs" type="text" name="photo" placeholder="Photo URL" id="photo" value={photo} onChange={e => setPhoto(e.target.value)} />
+          
+            <button className="flex self-center btn btn-success" type="submit">Add Reciepe</button>
           </div>
         </form>
       </div>

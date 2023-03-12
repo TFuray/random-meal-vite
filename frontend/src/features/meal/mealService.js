@@ -32,7 +32,7 @@ const newMeal = async (mealData, token) => {
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.post(API_URL + 'new', mealData, config)
+  const response = await axios.post(`${API_URL}new/`, mealData, config)
   return response.data
 }
 

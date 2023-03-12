@@ -16,7 +16,6 @@ function App() {
       <Router>
         <Header />
         {/* <DashboardShell /> */}
-        <div>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path='/login' element={<Login />} />
@@ -24,7 +23,6 @@ function App() {
             <Route path='/savedMeals' element={<SavedMeals />} />
             <Route path='/sharemeal' element={<ShareMeal />} />
           </Routes>
-        </div>
       </Router>
       <ToastContainer />
     </>

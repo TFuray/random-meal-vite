@@ -32,8 +32,8 @@ const Dashboard = () => {
   // }
 
   return (
-    <div>
-      <section>
+    <div className=''>
+      <section className='w-4/5 ml-auto mr-auto'>
         <div className='grid'>
           <DisplayMeal
             randomMeal={randomMeal}
