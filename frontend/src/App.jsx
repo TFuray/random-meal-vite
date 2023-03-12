@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Header from './components/generalComps/Header'
 import SavedMeals from './pages/SavedMeals'
 import ShareMeal from './pages/ShareMeal'
+import DashboardShell from './components/dashboardComps/DashboardShell'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <>
       <Router>
         <Header />
+        {/* <DashboardShell /> */}
         <div>
           <Routes>
             <Route path="/" element={<Dashboard />} />

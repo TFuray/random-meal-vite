@@ -22,6 +22,9 @@ const newMealModelSchema = new mongoose.Schema({
   },
   photo: {
     type: String
+  },
+  cloudinaryId: {
+    type: String,
   }
 },
   {

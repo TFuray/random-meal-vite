@@ -2,6 +2,7 @@ const axios = require('axios')
 const asyncHandler = require("express-async-handler")
 const SavedMeal = require('../models/savedMealModel')
 const NewMeal = require('../models/newMealModel')
+const cloudinary = require('../middleware/cloudinary')
 
 // @desc      Set Meal
 // @route     POST /api/meals/new

@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { token } from 'morgan'
 const API_URL = '/api/meal/'
 
 // Get random Meal
@@ -24,9 +25,21 @@ const saveMeal = async (mealData, token) => {
   return response.data
 }
 
+// post new meal
+const newMeal = async (mealData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.post(API_URL + 'new', mealData, config)
+  return response.data
+}
+
 const mealService = {
   getSavedMeals,
-  saveMeal
+  saveMeal,
+  newMeal
 }
 
 export default mealService
