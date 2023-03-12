@@ -1,4 +1,3 @@
-const axios = require('axios')
 const asyncHandler = require("express-async-handler")
 const SavedMeal = require('../models/savedMealModel')
 const NewMeal = require('../models/newMealModel')
@@ -7,8 +6,10 @@ const cloudinary = require('../middleware/cloudinary')
 // @desc      Set Meal
 // @route     POST /api/meals/new
 const setMeal = asyncHandler(async (req, res) => {
-  const { title, instructions, ingredietns, description, photo} = req.body
-
+  const { title, instructions, ingredietns, description } = req.body
+  const result = await cloudinary.uploader.upload(req.file.path)
+  console.log(result)
+  console.log(req.body)
   if (!title || !instructions || !ingredietns) {
     res.status(400)
     throw new Error('Please add title, instructions and ingredietns')
@@ -18,8 +19,9 @@ const setMeal = asyncHandler(async (req, res) => {
     ingredietns,
     instructions,
     description,
-    photo,
-   user: req.user.id
+    photo: result.secure_url,
+    cloudinaryId: result.public_id,
+    user: req.user.id
   })
 
   res.status(201).json(meal)
