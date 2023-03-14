@@ -44,14 +44,22 @@ const ShareMeal = () => {
               onChange={e => setTitle(e.target.value)}
             />
 
-            <textarea className="flex self-center w-1/2 textarea textarea-bordered " name="ingredietns" id="ingredietns" value={ingredietns} onChange={e => setIngredietns(e.target.value)} placeholder='ingredietns' type='text'  />
+            <textarea
+              className="flex self-center w-1/2 textarea textarea-bordered "
+              name="ingredietns"
+              id="ingredietns"
+              value={ingredietns}
+              onChange={e => setIngredietns(e.target.value)}
+              placeholder='ingredietns'
+              type='text'
+            />
 
-            <textarea className="flex self-center w-1/2 textarea textarea-bordered" name="instructions" id="instructions" value={instructions} onChange={e => setInstructions(e.target.value)} placeholder='Instructions' type='text'  />
+            <textarea className="flex self-center w-1/2 textarea textarea-bordered" name="instructions" id="instructions" value={instructions} onChange={e => setInstructions(e.target.value)} placeholder='Instructions' type='text' />
 
-            <textarea className="flex self-center w-1/2 textarea textarea-bordered" name="description" id="description" value={description} onChange={e => setDescription(e.target.value)} placeholder='Description' type='text'  />
+            <textarea className="flex self-center w-1/2 textarea textarea-bordered" name="description" id="description" value={description} onChange={e => setDescription(e.target.value)} placeholder='Description' type='text' />
 
             <input className="flex self-center input input-bordered w-full max-w-xs" type="text" name="photo" placeholder="Photo URL" id="photo" value={photo} onChange={e => setPhoto(e.target.value)} />
-          
+
             <button className="flex self-center btn btn-success" type="submit">Add Reciepe</button>
           </div>
         </form>

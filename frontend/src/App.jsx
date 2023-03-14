@@ -8,6 +8,7 @@ import Header from './components/generalComps/Header'
 import SavedMeals from './pages/SavedMeals'
 import ShareMeal from './pages/ShareMeal'
 import DashboardShell from './components/dashboardComps/DashboardShell'
+import Footer from './components/generalComps/Footer'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path='/savedMeals' element={<SavedMeals />} />
             <Route path='/sharemeal' element={<ShareMeal />} />
           </Routes>
+          <Footer />
       </Router>
       <ToastContainer />
     </>

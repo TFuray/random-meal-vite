@@ -26,7 +26,9 @@ const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
         />
         {!clicked ? <button type="submit" onClick={() => handleClick()} className="btn btn-secondary flex justify-center space-x-2 ml-5">
           Save This Meal
-        </button> : <button type="submit" onClick={() => handleClick()} className="btn btn-secondary btn-disabled flex justify-center space-x-2 ml-5">
+        </button> :
+
+          <button type="submit" onClick={() => handleClick()} className="btn btn-secondary btn-disabled flex justify-center space-x-2 ml-5">
           Meal already Saved
         </button>}
       </form>

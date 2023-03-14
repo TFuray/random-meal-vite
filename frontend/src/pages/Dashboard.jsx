@@ -33,19 +33,18 @@ const Dashboard = () => {
 
   return (
     <div className=''>
-      <section className='w-4/5 ml-auto mr-auto'>
+      <section className='w-4/5 mt-10 ml-auto mr-auto'>
         <div className='grid'>
           <DisplayMeal
             randomMeal={randomMeal}
           />
         </div>
-        <div className='flex justify-center mt-24'>
+        <div className='flex justify-center mt-5'>
           <ButtonRandomMeal
             onClick={onClick}
             setClicked={setClicked}
           />
           {showBtn ? <ButtonSave clicked={clicked} setClicked={setClicked} randomMeal={randomMeal}/> : null } 
-
         </div>
       </section>
     </div>
