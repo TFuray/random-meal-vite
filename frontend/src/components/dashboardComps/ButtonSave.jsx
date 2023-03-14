@@ -1,12 +1,17 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { saveMeal } from '../../features/meal/mealSlice'
+import { toast } from 'react-toastify'
 
 const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
   const dispatch = useDispatch()
   const meal = JSON.stringify(randomMeal)
+  const { user } = useSelector(state => state.auth)
+
   const onSubmit = (e) => {
     e.preventDefault()
-
+    if (!user) {
+      toast.error("Login To Do That")   
+    } 
     dispatch(saveMeal({ meal }))
   }
   const handleClick = () => {
@@ -29,8 +34,8 @@ const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
         </button> :
 
           <button type="submit" onClick={() => handleClick()} className="btn btn-secondary btn-disabled flex justify-center space-x-2 ml-5">
-          Meal already Saved
-        </button>}
+            Meal already Saved
+          </button>}
       </form>
 
 

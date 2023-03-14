@@ -1,24 +1,16 @@
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import {  useSelector } from 'react-redux';
 import ButtonRandomMeal from '../components/dashboardComps/ButtonRandomMeal';
 import DisplayMeal from '../components/dashboardComps/DisplayMeal';
 import ButtonSave from '../components/dashboardComps/ButtonSave';
 
 const Dashboard = () => {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
   const [randomMeal, setRandomMeal] = useState([]);
   const [showBtn, setShowBtn] = useState(false)
   const [clicked, setClicked] = useState(false)
 
 
   const { user } = useSelector(state => state.auth)
-
-  // useEffect(() => {
-  //   onClick()
-  //   console.log('1')
-  // }, [user])
 
   const onClick = async () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
@@ -27,9 +19,6 @@ const Dashboard = () => {
       )
     setShowBtn(true)
   }
-  // const onSave = async () => {
-
-  // }
 
   return (
     <div className=''>
