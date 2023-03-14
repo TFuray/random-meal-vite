@@ -10,8 +10,10 @@ const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
   const onSubmit = (e) => {
     e.preventDefault()
     if (!user) {
-      toast.error("Login To Do That")   
-    } 
+      toast.warn("Login To Do That", {
+        position: toast.POSITION.TOP_CENTER
+      })
+    }
     dispatch(saveMeal({ meal }))
   }
   const handleClick = () => {
