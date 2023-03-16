@@ -34,5 +34,6 @@ app.use('/api/meal', require('./routes/mealDbRoutes'))
 // }
 
 app.use(errorHandler)
-connectDB()
-// app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+connectDB().then(() => {
+  app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+})
