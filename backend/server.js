@@ -7,7 +7,7 @@ const connectDB = require('./config/db')
 const PORT = process.env.PORT || 5000
 
 // Connect to database
-connectDB()
+// connectDB()
 
 const app = express()
 
@@ -34,5 +34,5 @@ app.use('/api/meal', require('./routes/mealDbRoutes'))
 // }
 
 app.use(errorHandler)
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+connectDB()
+// app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
