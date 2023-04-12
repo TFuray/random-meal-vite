@@ -32,11 +32,11 @@ const ButtonSave = ({ randomMeal, clicked, setClicked }) => {
           readOnly
         />
         {!clicked ? <button type="submit" onClick={() => handleClick()} className="btn btn-secondary flex justify-center space-x-2 ml-5">
-          Save This Meal
+          Save this meal
         </button> :
 
           <button type="submit" onClick={() => handleClick()} className="btn btn-secondary btn-disabled flex justify-center space-x-2 ml-5">
-            Meal already Saved
+            Meal already saved
           </button>}
       </form>
 
