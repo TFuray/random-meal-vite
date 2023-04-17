@@ -9,7 +9,7 @@ const newMealModelSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  ingredietns: {
+  ingredients: {
     type: String,
     required: true,
   },

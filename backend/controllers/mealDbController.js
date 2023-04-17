@@ -5,14 +5,14 @@ const NewMeal = require('../models/newMealModel')
 // @desc      Set Meal
 // @route     POST /api/meals/new
 const setMeal = asyncHandler(async (req, res) => {
-  const { title, instructions, ingredietns, description, photo } = req.body
-  if (!title || !instructions || !ingredietns) {
+  const { title, instructions, ingredients, description, photo } = req.body
+  if (!title || !instructions || !ingredients) {
     res.status(400)
-    throw new Error('Please add title, instructions and ingredietns')
+    throw new Error('Please add title, instructions and ingredients')
   }
   const meal = await NewMeal.create({
     title,
-    ingredietns,
+    ingredients,
     instructions,
     description,
     photo,
