@@ -4,7 +4,7 @@ require("colors")
 require("dotenv").config()
 const { errorHandler } = require("./middleware/errorMiddleware")
 const connectDB = require("./config/db")
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3456
 
 // Connect to database
 // connectDB()
@@ -18,16 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use("/api/users", require("./routes/userRoutes"))
 app.use("/api/meal", require("./routes/mealDbRoutes"))
 
-// Serve frontend
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")))
 
-  app.get("*", (req, res) =>
-    res.sendFile(
-      path.resolve(__dirname, "../", "frontend", "build", "index.html")
-    )
-  )
-}
 
 // serve frontend
 if (process.env.NODE_ENV === "production") {
