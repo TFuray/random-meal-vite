@@ -1,9 +1,9 @@
-const path = require('path')
-const express = require('express')
-require('colors')
-require('dotenv').config()
-const { errorHandler } = require('./middleware/errorMiddleware')
-const connectDB = require('./config/db')
+const path = require("path")
+const express = require("express")
+require("colors")
+require("dotenv").config()
+const { errorHandler } = require("./middleware/errorMiddleware")
+const connectDB = require("./config/db")
 const PORT = process.env.PORT || 5000
 
 // Connect to database
@@ -15,14 +15,31 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // Routes
-app.use('/api/users', require('./routes/userRoutes'))
-app.use('/api/meal', require('./routes/mealDbRoutes'))
+app.use("/api/users", require("./routes/userRoutes"))
+app.use("/api/meal", require("./routes/mealDbRoutes"))
+
+// Serve frontend
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")))
+
+  app.get("*", (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, "../", "frontend", "build", "index.html")
+    )
+  )
+}
 
 // serve frontend
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../frontend/dist')))
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")))
 
-  app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../', 'frontend', 'dist', 'index.html')))
+  app.get("*", (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, "../", "frontend", "dist", "index.html")
+    )
+  )
+} else {
+  app.get("/", (req, res) => res.send("please set to production"))
 }
 
 app.use(errorHandler)
