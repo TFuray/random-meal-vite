@@ -29,10 +29,10 @@ const SavedMeals = () => {
       <section>
         <div className="grid grid-col-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {mealFilter.map(meal => (
-            <MealCard key={meal.idMeal} meal={meal} />
+            <MealCard key={meal.idMeal} id={meal.idMeal} meal={meal} />
           ))}
-        </div> 
-      </section>      
+        </div>
+      </section>
     </>
   )
 }
