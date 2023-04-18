@@ -1,6 +1,7 @@
 const asyncHandler = require("express-async-handler")
 const SavedMeal = require('../models/savedMealModel')
 const NewMeal = require('../models/newMealModel')
+const User = require('../models/userModel')
 
 // @desc      Set Meal
 // @route     POST /api/meals/new
@@ -26,7 +27,8 @@ const setMeal = asyncHandler(async (req, res) => {
 // @desc      Get saved meals
 // @route     GET /api/meals/
 const getSavedMeals = asyncHandler(async (req, res) => {
-  const meals = await SavedMeal.find()
+  console.log(req.user.id)
+  const meals = await SavedMeal.find({ user: req.user.id})
   res.status(200).json(meals)
 })
 
