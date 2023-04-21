@@ -9,7 +9,7 @@ const ShareMeal = () => {
   const navigate = useNavigate()
 
   const [title, setTitle] = useState('')
-  const [ingredietns, setIngredietns] = useState('')
+  const [ingredients, setIngredients] = useState('')
   const [instructions, setInstructions] = useState('')
   const [description, setDescription] = useState('')
   const [photo, setPhoto] = useState('')
@@ -17,9 +17,9 @@ const ShareMeal = () => {
   const onSubmit = e => {
     e.preventDefault()
 
-    dispatch(newMeal({ title, ingredietns, instructions, description, photo }))
+    dispatch(newMeal({ title, ingredients, instructions, description, photo }))
     setTitle('')
-    setIngredietns('')
+    setIngredients('')
     setInstructions('')
     setDescription('')
     setPhoto('')
@@ -46,11 +46,11 @@ const ShareMeal = () => {
 
             <textarea
               className="flex self-center w-1/2 textarea textarea-bordered "
-              name="ingredietns"
-              id="ingredietns"
-              value={ingredietns}
-              onChange={e => setIngredietns(e.target.value)}
-              placeholder='ingredietns'
+              name="ingredients"
+              id="ingredients"
+              value={ingredients}
+              onChange={e => setIngredients(e.target.value)}
+              placeholder='ingredients'
               type='text'
             />
 

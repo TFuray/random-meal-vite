@@ -47,28 +47,25 @@ const Header = () => {
                     <div className="flex items-baseline ml-10 space-x-4">
                       <div
                         className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        href="/#"
                       >
                         <Link to="/">Random Meal</Link>
                       </div>
                       <div
                         className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        href="/#"
+                      >
+                        <Link to="/userMeals"> User Meals</Link>
+                      </div>
+                      <div
+                        className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                       >
                         <Link to="/savedMeals"> Saved Meals</Link>
                       </div>
                       <div
                         className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        href="/#"
                       >
                         <Link to="/shareMeal"> Share Meal</Link>
                       </div>
-                      <div
-                        className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        href="/#"
-                      >
-                        <Link to="/userMeals"> User Meals</Link>
-                      </div>
+
                       <button
                         onClick={() => onLogout()}
                         className="btn btn-accent text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
