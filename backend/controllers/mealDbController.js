@@ -27,12 +27,11 @@ const setMeal = asyncHandler(async (req, res) => {
 // @desc      Get saved meals
 // @route     GET /api/meals/
 const getSavedMeals = asyncHandler(async (req, res) => {
-  console.log(req.user.id)
-  const meals = await SavedMeal.find({ user: req.user.id})
+   const meals = await SavedMeal.find({ user: req.user.id})
   res.status(200).json(meals)
 })
 
-// @desc..... Get 
+// @desc..... Get
 
 // @desc  set saved meal
 // @route POST /api/meals/
@@ -43,6 +42,9 @@ const saveMeal = asyncHandler(async (req, res) => {
   })
   res.status(200).json(meal)
 })
+
+// @desc      Delete saved meal
+// @route     DELETE /api/meal/delete/:id
 
 module.exports = {
   saveMeal,
