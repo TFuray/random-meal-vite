@@ -1,6 +1,7 @@
 import axios from 'axios'
-import { token } from 'morgan'
 const API_URL = '/api/meal/'
+
+
 
 // Get random Meal
 const getSavedMeals = async (token) => {
@@ -36,10 +37,23 @@ const newMeal = async (mealData, token) => {
   return response.data
 }
 
+// Delete saved meal
+const deleteMeal = async (mealId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.delete(API_URL + mealId, config)
+
+  return response.data
+}
+
 const mealService = {
   getSavedMeals,
   saveMeal,
-  newMeal
+  newMeal,
+  deleteMeal
 }
 
 export default mealService

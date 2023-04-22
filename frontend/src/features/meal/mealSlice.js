@@ -45,6 +45,19 @@ export const getSavedMeals = createAsyncThunk(
   }
 )
 
+// Delete meal
+export const deleteMeal = createAsyncThunk(
+  'meal/deleteMeal',
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await mealService.deleteMeal(id, token)
+    } catch (error) {
+    return thunkAPI.rejectWithValue(extractErrorMessage(error))
+    }
+  }
+)
+
 export const mealSlice = createSlice({
   name: 'meal',
   initialState,
