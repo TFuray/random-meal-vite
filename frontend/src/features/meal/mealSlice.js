@@ -75,6 +75,11 @@ export const mealSlice = createSlice({
       .addCase(newMeal.fulfilled, (state, action) => {
         state.meal = (action.payload)
       })
+      .addCase(deleteMeal.fulfilled, (state, action) => {
+        state.meal.filter(
+          (meal) => meal._id !== action.payload.id
+        )
+      })
   }
 })
 
