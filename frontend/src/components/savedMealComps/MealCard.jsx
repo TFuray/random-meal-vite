@@ -1,13 +1,11 @@
 import { useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { deleteMeal } from "../../features/meal/mealSlice"
 import SavedModal from "./SavedModal"
 
-const MealCard = ({ meal, id }) => {
+const MealCard = ({ meal, _id }) => {
   const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
-  const [mealCard, setMealCard] = useState([meal])
-
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
   
@@ -25,7 +23,7 @@ const MealCard = ({ meal, id }) => {
         </div>
         <div className="absolute top-0 right-0 pt-10 pr-5">
           <button
-            onClick={() => dispatch(deleteMeal(meal._id))}
+            onClick={() => dispatch(deleteMeal(_id))}
             className="btn btn-circle hover:bg-red-600 "
           >
             <svg
@@ -59,10 +57,9 @@ const MealCard = ({ meal, id }) => {
         </div>
       </div>
       <SavedModal
-        id={id}
         isOpen={isOpen}
         closeModal={closeModal}
-        meal={mealCard}
+        meal={meal}
       />
     </div>
   )

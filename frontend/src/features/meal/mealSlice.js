@@ -76,8 +76,7 @@ export const mealSlice = createSlice({
         state.meal = (action.payload)
       })
       .addCase(deleteMeal.fulfilled, (state, action) => {
-        console.log(state.meal)
-        state.meal = state.meal.filter(
+        state.meal.filter(
           (meal) => meal._id !== action.payload.id
         )
       })

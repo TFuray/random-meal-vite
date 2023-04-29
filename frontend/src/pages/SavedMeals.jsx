@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { getSavedMeals } from '../features/meal/mealSlice'
-import Spinner from '../components/generalComps/Spinner'
-import MealCard from '../components/savedMealComps/MealCard'
-
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import Spinner from "../components/generalComps/Spinner"
+import MealCard from "../components/savedMealComps/MealCard"
+import { getSavedMeals } from "../features/meal/mealSlice"
 
 const SavedMeals = () => {
   const { meal } = useSelector((state) => state.meal)
-
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -18,18 +16,22 @@ const SavedMeals = () => {
     return <Spinner />
   }
 
-  const mealFilter = meal.map((meal) => {
-    return JSON.parse(meal.meal.slice(1, -1))
-  })
-
+  // const mealFilter = meal.map((meal) => {
+  //   return JSON.parse(meal.meal.slice(1, -1))
+  // })
+  // console.log(mealFilter)
   return (
     <>
-      <h1 className='text-center text-2xl font-bold m-10'>Saved Meals</h1>
+      <h1 className="text-center text-2xl font-bold m-10">Saved Meals</h1>
 
       <section>
         <div className="grid grid-col-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {mealFilter.map(meal => (
-            <MealCard key={meal.idMeal} id={meal.idMeal} meal={meal} />
+          {meal.map((meal) => (
+            <MealCard
+              key={meal._id}
+              _id={meal._id}
+              meal={JSON.parse(meal.meal.slice(1, -1))}
+            />
           ))}
         </div>
       </section>

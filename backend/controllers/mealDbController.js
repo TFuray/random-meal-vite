@@ -46,8 +46,8 @@ const saveMeal = asyncHandler(async (req, res) => {
 // @desc      Delete saved meal
 // @route     DELETE /api/meal/:id
 const deleteMeal = asyncHandler(async (req, res) => {
-  const meal = await SavedMeal.findById(req.params.id)
-
+  const meal = await SavedMeal.findById(req.params._id)
+  console.log(req)
   if (!meal) {
     res.status(400)
     throw new Error('Meal not found')

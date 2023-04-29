@@ -2,9 +2,9 @@ import { Dialog, Transition } from "@headlessui/react"
 import DisplayMeal from "../dashboardComps/DisplayMeal"
 import { Fragment } from "react"
 
-const SavedModal = ({ isOpen, closeModal, meal, id }) => {
-  console.log(meal)
-  return (
+const SavedModal = ({ isOpen, closeModal, meal  }) => {
+   
+   return (
     <div>
       <div>
         <Transition
