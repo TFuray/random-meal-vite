@@ -46,22 +46,22 @@ const saveMeal = asyncHandler(async (req, res) => {
 // @desc      Delete saved meal
 // @route     DELETE /api/meal/:id
 const deleteMeal = asyncHandler(async (req, res) => {
-  const meal = await SavedMeal.findById(req.params._id)
-  console.log(req)
-  if (!meal) {
-    res.status(400)
-    throw new Error('Meal not found')
-  }
+  const meal = await SavedMeal.findById(req.params.id)
+  console.log(req.params.id)
+  // if (!meal) {
+  //   res.status(400)
+  //   throw new Error('Meal not found')
+  // }
 
-  if (!req.user) {
-    res.status(401)
-    throw new Error('User not found')
-  }
+  // if (!req.user) {
+  //   res.status(401)
+  //   throw new Error('User not found')
+  // }
 
-  if (meal.user.toString() !== req.user.id) {
-    res.status(401)
-    throw new Eror('User not authorized')
-  }
+  // if (meal.user.toString() !== req.user.id) {
+  //   res.status(401)
+  //   throw new Eror('User not authorized')
+  // }
 
   await meal.remove()
   res.status(200).json({ id: req.params.id})

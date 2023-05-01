@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Spinner from "../components/generalComps/Spinner"
 import MealCard from "../components/savedMealComps/MealCard"
-import { getSavedMeals } from "../features/meal/mealSlice"
+import { getSavedMeals, deleteMeal} from "../features/meal/mealSlice"
 
 const SavedMeals = () => {
   const { meal } = useSelector((state) => state.meal)
@@ -20,6 +20,7 @@ const SavedMeals = () => {
   //   return JSON.parse(meal.meal.slice(1, -1))
   // })
   // console.log(mealFilter)
+
   return (
     <>
       <h1 className="text-center text-2xl font-bold m-10">Saved Meals</h1>
@@ -29,7 +30,7 @@ const SavedMeals = () => {
           {meal.map((meal) => (
             <MealCard
               key={meal._id}
-              _id={meal._id}
+              savedMeal={meal}
               meal={JSON.parse(meal.meal.slice(1, -1))}
             />
           ))}
