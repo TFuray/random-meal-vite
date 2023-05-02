@@ -26,7 +26,7 @@ const SavedMeals = () => {
       <h1 className="text-center text-2xl font-bold m-10">Saved Meals</h1>
 
       <section>
-        <div className="grid grid-col-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-col-1 content-center gap-5 md:grid-cols-2 lg:grid-cols-3">
           {meal.map((meal) => (
             <MealCard
               key={meal._id}

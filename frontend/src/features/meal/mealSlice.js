@@ -1,14 +1,14 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import mealService from '../meal/mealService'
-import { extractErrorMessage } from '../../../utils'
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { extractErrorMessage } from "../../../utils"
+import mealService from "../meal/mealService"
 
 const initialState = {
-  meal: '',
+  meal: "",
 }
 
 // Save meal
 export const saveMeal = createAsyncThunk(
-  'meal/saved',
+  "meal/saved",
   async (mealData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -21,7 +21,7 @@ export const saveMeal = createAsyncThunk(
 
 // New meal
 export const newMeal = createAsyncThunk(
-  'meal/newMeal',
+  "meal/newMeal",
   async (mealData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -34,7 +34,7 @@ export const newMeal = createAsyncThunk(
 
 // Get saved meals
 export const getSavedMeals = createAsyncThunk(
-  'meal/getRandomMeal',
+  "meal/getRandomMeal",
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -47,19 +47,19 @@ export const getSavedMeals = createAsyncThunk(
 
 // Delete meal
 export const deleteMeal = createAsyncThunk(
-  'meal/deleteMeal',
+  "meal/deleteMeal",
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
       return await mealService.deleteMeal(id, token)
     } catch (error) {
-    return thunkAPI.rejectWithValue(extractErrorMessage(error))
+      return thunkAPI.rejectWithValue(extractErrorMessage(error))
     }
   }
 )
 
 export const mealSlice = createSlice({
-  name: 'meal',
+  name: "meal",
   initialState,
   extraReducers: (builder) => {
     builder
@@ -70,17 +70,17 @@ export const mealSlice = createSlice({
         state.meal = action.payload
       })
       .addCase(saveMeal.fulfilled, (state, action) => {
-        state.meal = (action.payload)
+        state.meal = action.payload
       })
       .addCase(newMeal.fulfilled, (state, action) => {
-        state.meal = (action.payload)
+        state.meal = action.payload
       })
       .addCase(deleteMeal.fulfilled, (state, action) => {
-        state.meal.filter(
-          (meal) => meal._id !== action.payload.id
-        )
+        console.log(action.payload)
+        state.meal.filter((meal) => meal !== action.payload)
+        // state.meal.filter((meal) => meal._id !== action.payload.id)
       })
-  }
+  },
 })
 
 export default mealSlice.reducer

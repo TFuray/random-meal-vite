@@ -6,6 +6,7 @@ import SavedModal from "./SavedModal"
 const MealCard = ({ meal, savedMeal }) => {
   const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
+  const [mealCard, setMealCard] = useState([meal])
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
 
@@ -14,7 +15,7 @@ const MealCard = ({ meal, savedMeal }) => {
   // }
 
   return (
-    <div className="card w-96 bg-neutral bg-opacity-50 shadow-xl">
+    <div className=" card w-96 bg-neutral bg-opacity-50 shadow-xl">
       <div className="static mt-2 mr-8 ">
         <div className="static">
           <figure className="pl-10 pt-10">
@@ -63,7 +64,7 @@ const MealCard = ({ meal, savedMeal }) => {
       <SavedModal
         isOpen={isOpen}
         closeModal={closeModal}
-        meal={meal}
+        meal={mealCard}
       />
     </div>
   )

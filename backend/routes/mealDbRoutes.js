@@ -11,7 +11,7 @@ const {
 const { protect } = require("../middleware/authMiddleware")
 
 router.route("/").get(protect, getSavedMeals).post(protect, saveMeal)
-router.route("/:id").delete(deleteMeal)
+router.route("/:id").delete(protect, deleteMeal)
 router.route("/new").post(protect, setMeal)
 
 module.exports = router
