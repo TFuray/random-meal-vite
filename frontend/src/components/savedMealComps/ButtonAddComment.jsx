@@ -1,6 +1,6 @@
 const ButtonAddComment = () => {
   return (
-    <div>ButtonAddComment</div>
+  <button></button>
   )
 }
 export default ButtonAddComment

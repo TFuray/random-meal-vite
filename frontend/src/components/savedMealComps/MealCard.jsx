@@ -10,10 +10,6 @@ const MealCard = ({ meal, savedMeal }) => {
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
 
-  // const onClick = () => {
-  //   dispatch(deleteMeal(_id))
-  // }
-
   return (
     <div className=" card w-96 bg-neutral bg-opacity-50 shadow-xl">
       <div className="static mt-2 mr-8 ">
