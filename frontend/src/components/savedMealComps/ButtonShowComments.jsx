@@ -1,6 +1,11 @@
-const ButtonShowComments = () => {
+const ButtonShowComments = ({ openCommentModal }) => {
   return (
-    <button className="btn ">Show Comments</button>
+    <button
+      onClick={openCommentModal}
+      className="btn btn-secondary btn-outline "
+    >
+      Comments
+    </button>
   )
 }
 export default ButtonShowComments

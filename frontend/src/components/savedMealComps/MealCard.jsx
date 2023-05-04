@@ -1,14 +1,19 @@
 import { useState } from "react"
+import ButtonShowComments from "./ButtonShowComments"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteMeal } from "../../features/meal/mealSlice"
 import SavedModal from "./SavedModal"
+import ModalComment from "./ModalComment"
 
 const MealCard = ({ meal, savedMeal }) => {
   const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState(false)
+  const [isCommentOpen, setIsCommentOpen] = useState(false)
   const [mealCard, setMealCard] = useState([meal])
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
+  const openCommentModal = () => setIsCommentOpen(true)
+  const closeCommentModal = () => setIsCommentOpen(false)
 
   return (
     <div className=" card w-96 bg-neutral bg-opacity-50 shadow-xl">
@@ -55,11 +60,19 @@ const MealCard = ({ meal, savedMeal }) => {
           >
             View Recipe
           </button>
+          <ButtonShowComments
+            openCommentModal={openCommentModal}
+          />
         </div>
       </div>
       <SavedModal
         isOpen={isOpen}
         closeModal={closeModal}
+        meal={mealCard}
+      />
+      <ModalComment
+        isOpen={isCommentOpen}
+        closeModal={closeCommentModal}
         meal={mealCard}
       />
     </div>
