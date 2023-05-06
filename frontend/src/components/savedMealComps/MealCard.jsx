@@ -1,9 +1,10 @@
 import { useState } from "react"
-import ButtonShowComments from "./ButtonShowComments"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteMeal } from "../../features/meal/mealSlice"
-import SavedModal from "./SavedModal"
+import ButtonShowComments from "./ButtonShowComments"
 import ModalComment from "./ModalComment"
+import SavedModal from "./SavedModal"
+import StarRating from "./StarRating"
 
 const MealCard = ({ meal, savedMeal }) => {
   const dispatch = useDispatch()
@@ -52,7 +53,9 @@ const MealCard = ({ meal, savedMeal }) => {
 
       <div className="card-body items-center text-center">
         <h2 className="card-title">{meal.strMeal}</h2>
-        <p></p>
+        <div>
+            <StarRating stars={4} />
+        </div>
         <div className="card-actions">
           <button
             onClick={openModal}
@@ -60,9 +63,7 @@ const MealCard = ({ meal, savedMeal }) => {
           >
             View Recipe
           </button>
-          <ButtonShowComments
-            openCommentModal={openCommentModal}
-          />
+          <ButtonShowComments openCommentModal={openCommentModal} />
         </div>
       </div>
       <SavedModal
