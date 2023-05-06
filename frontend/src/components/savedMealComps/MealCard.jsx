@@ -54,7 +54,7 @@ const MealCard = ({ meal, savedMeal }) => {
       <div className="card-body items-center text-center">
         <h2 className="card-title">{meal.strMeal}</h2>
         <div>
-            <StarRating stars={4} />
+            <StarRating stars={savedMeal.rating} />
         </div>
         <div className="card-actions">
           <button

@@ -7,6 +7,10 @@ const savedMealModelSchema = new mongoose.Schema({
   },
   meal: {
     type: String
+  },
+  rating: {
+    type: Number,
+    default: 0
   }
 },
   {

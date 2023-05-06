@@ -12,7 +12,7 @@ const StarRating = ({ stars }) => {
         </li>
       ))}
       {[...Array(empty)].map((e, i) => (
-        <li key={i}>
+        <li key={i}> 
           <Star />
         </li>
       ))}
