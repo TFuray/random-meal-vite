@@ -37,6 +37,8 @@ const newMeal = async (mealData, token) => {
   return response.data
 }
 
+// update meal rating
+
 // Delete saved meal
 const deleteMeal = async (mealId, token) => {
   const config = {
