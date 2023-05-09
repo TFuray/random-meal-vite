@@ -58,6 +58,19 @@ export const deleteMeal = createAsyncThunk(
   }
 )
 
+// Update Rating
+export const updateRating = createAsyncThunk(
+  "meal/updateRating",
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await mealService.updateRating(id, token)
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(error))
+    }
+  }
+)
+
 export const mealSlice = createSlice({
   name: "meal",
   initialState,
@@ -77,6 +90,9 @@ export const mealSlice = createSlice({
       })
       .addCase(deleteMeal.fulfilled, (state, action) => {
         state.meal = state.meal.filter((meal) => meal._id !== action.payload.id)
+      })
+      .addCase(updateRating.fulfilled, (state, action) => {
+        state.meal = action.payload
       })
   },
 })

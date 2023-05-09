@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { token } from 'morgan'
 const API_URL = '/api/meal/'
 
 
@@ -38,6 +39,15 @@ const newMeal = async (mealData, token) => {
 }
 
 // update meal rating
+const updateRating = async (mealId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.put(API_URL + mealId, config)
+  return response.data
+}
 
 // Delete saved meal
 const deleteMeal = async (mealId, token) => {
@@ -55,7 +65,8 @@ const mealService = {
   getSavedMeals,
   saveMeal,
   newMeal,
-  deleteMeal
+  deleteMeal,
+  updateRating
 }
 
 export default mealService
