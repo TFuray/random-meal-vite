@@ -10,4 +10,4 @@ or what to go out and get. This random meal generator will show you meal, what i
 https://comfortable-fish-woolens.cyclic.app/
 
 ** Build isn't complete, some features are missing and there are still a few bugs
-** You can make a new account or sign in with email: "test@test.com" password: "password"
+** You can make a new account or sign in with <br> email: `"test@test.com"` <br> password: `"password"`
