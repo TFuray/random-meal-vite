@@ -10,7 +10,6 @@ const Dashboard = () => {
   const [clicked, setClicked] = useState(false)
 
   const { user } = useSelector((state) => state.auth)
-  console.log(user)
   const onClick = async () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
       .then((res) => res.json())

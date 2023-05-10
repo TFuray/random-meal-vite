@@ -39,13 +39,13 @@ const newMeal = async (mealData, token) => {
 }
 
 // update meal rating
-const updateRating = async (mealId, token) => {
+const updateRating = async (mealId, rating, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.put(API_URL + mealId, config)
+  const response = await axios.put(API_URL + mealId, rating, config)
   return response.data
 }
 

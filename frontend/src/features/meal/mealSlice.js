@@ -64,7 +64,7 @@ export const updateRating = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
-      return await mealService.updateRating(id, token)
+      return await mealService.updateRating(id, rating, token)
     } catch (error) {
       return thunkAPI.rejectWithValue(extractErrorMessage(error))
     }

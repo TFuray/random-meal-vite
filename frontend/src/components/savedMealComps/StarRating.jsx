@@ -1,7 +1,7 @@
 import FilledStar from "./FilledStar"
 import Star from "./Star"
 
-const StarRating = ({ stars }) => {
+const StarRating = ({ meal, stars }) => {
   const empty = 5 - stars
 
   return (
@@ -12,8 +12,8 @@ const StarRating = ({ stars }) => {
         </li>
       ))}
       {[...Array(empty)].map((e, i) => (
-        <li key={i}> 
-          <Star />
+        <li key={i}>
+          <Star meal={meal} />
         </li>
       ))}
     </ul>
