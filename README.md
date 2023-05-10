@@ -5,3 +5,8 @@ or what to go out and get. This random meal generator will show you meal, what i
 
 # How It's Made:
 <b>Tech Used:</b> React, Redux, MongoDB, Tailwind, Express, Node.js, JavaScript, Axios
+
+# View It Live Here:
+https://comfortable-fish-woolens.cyclic.app/
+
+** Build isn't complete, some features are missing and there are still a few bugs
