@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { logout, reset } from "../../features/auth/authSlice"
 
@@ -7,12 +7,12 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector((state) => state.auth)
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState("dark")
 
   const onLogout = () => {
     dispatch(logout())
     dispatch(reset())
-    navigate('/')
+    navigate("/")
   }
 
   return (
@@ -45,24 +45,16 @@ const Header = () => {
                   </div>
                   <div className="hidden md:block">
                     <div className="flex items-baseline ml-10 space-x-4">
-                      <div
-                        className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                      >
+                      <div className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         <Link to="/">Random Meal</Link>
                       </div>
-                      <div
-                        className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                      >
-                        <Link to="/userMeals"> User Meals. alert-info</Link>
+                      <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/userMeals"> User Meals</Link>
                       </div>
-                      <div
-                        className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                      >
+                      <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         <Link to="/savedMeals"> Saved Meals</Link>
                       </div>
-                      <div
-                        className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                      >
+                      <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         <Link to="/shareMeal"> Share Meal</Link>
                       </div>
 
