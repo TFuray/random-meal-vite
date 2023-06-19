@@ -1,10 +1,19 @@
-import {configureStore} from '@reduxjs/toolkit'
-import mealReducer from '../features/meal/mealSlice'
-import authReducer from '../features/auth/authSlice'
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"
+import { apiSlice } from "../features/apiSlice"
+import authReducer from "../features/auth/authSlice"
+import bbcReducer from "../features/bbc/bbcSlice"
+import mealReducer from "../features/meal/mealSlice"
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     meal: mealReducer,
-    auth: authReducer
-  }
+    auth: authReducer,
+    bbc: bbcReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware),
+  devTools: true,
 })
+
+export default store
