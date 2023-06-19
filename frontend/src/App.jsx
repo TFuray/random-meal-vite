@@ -7,6 +7,7 @@ import Register from './pages/Register'
 import Header from './components/generalComps/Header'
 import SavedMeals from './pages/SavedMeals'
 import ShareMeal from './pages/ShareMeal'
+import Search from './pages/Search'
 import Footer from './components/generalComps/Footer'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/savedMeals' element={<SavedMeals />} />
             <Route path='/sharemeal' element={<ShareMeal />} />
+            <Route path='/search' element={<Search/>} />
           </Routes>
           <Footer />
       </Router>
