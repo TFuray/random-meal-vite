@@ -57,7 +57,7 @@ const DisplayMeal = ({ randomMeal }) => {
             .slice(0, 20)
           return (
             <div
-              className="hero card shadow-2xl bg-info-content rounded-3xl"
+              className="hero card shadow-2xl glass rounded-3xl"
               key={idMeal}
             >
               <div className="hero-content flex-col lg:flex-row">
@@ -99,9 +99,10 @@ const DisplayMeal = ({ randomMeal }) => {
                   <h2 className="flex pt-6 w-4/5 text-center text-2xl font-bold">
                     Instructions:
                   </h2>
-                  <p className="flex pb-6 w-4/5 line-clamp-5 text-start hover:line-clamp-none">
+                  <p className="flex pb-6 w-4/5 text-start line-clamp-4 hover:line-clamp-none">
                     {strInstructions}
                   </p>
+                  <button className="text-info hover:text-blue-500">Show More</button>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 const axios = require("axios")
 
-const key = 'a2737ca102msh73d48681676ec70p1f92d4jsn1832240b8d64'
+const key = "a2737ca102msh73d48681676ec70p1f92d4jsn1832240b8d64"
 const host = "bbc-good-food-api.p.rapidapi.com"
 const baseUrl =
   "https://bbc-good-food-api.p.rapidapi.com/categories-collections-ids"
@@ -20,11 +20,9 @@ const searchMeal = async (req, res) => {
       headers: baseHeaders,
     })
     console.log(response.data)
-    res.status(200).json(response.data)
   } catch (error) {
     console.error("error with search", error)
-    res.status(500).json({ error: "failed to search database" })
   }
 }
 
-export default { searchMeal }
+export default searchMeal

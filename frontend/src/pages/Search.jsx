@@ -1,7 +1,10 @@
+import SearchBar from "../components/searchComps/SearchBar"
+
 const Search = () => {
+
   return (
     <>
-      <p>search</p>
+    <SearchBar/>
     </>
   )
 }
