@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import ButtonRandomMeal from "../components/dashboardComps/ButtonRandomMeal"
 import ButtonSave from "../components/dashboardComps/ButtonSave"
 import DisplayMeal from "../components/dashboardComps/DisplayMeal"
+import SearchBar from "../components/searchComps/SearchBar"
 
 const Dashboard = () => {
   const [randomMeal, setRandomMeal] = useState([])
@@ -17,13 +18,14 @@ const Dashboard = () => {
     setShowBtn(true)
   }
 
-  useEffect(() => {
-    return () => onClick()
-  }, [])
+  // useEffect(() => {
+  //   return () => onClick()
+  // }, [])
 
   return (
     <div className="">
-      <div className="flex justify-center mt-5">
+      <div className="flex  justify-center ">
+        <SearchBar />
         <ButtonRandomMeal
           onClick={onClick}
           setClicked={setClicked}
