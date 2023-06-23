@@ -1,4 +1,3 @@
-
 const SearchResponse = ({ data }) => {
   return (
     <>
@@ -6,7 +5,7 @@ const SearchResponse = ({ data }) => {
         {data.map((data, index) => {
           return (
             <div
-              className="grid card w-96 glass"
+              className="grid card w-full bg-primary bg-opacity-50 drop-shadow-xl"
               key={index}
             >
               <div className="card-body">

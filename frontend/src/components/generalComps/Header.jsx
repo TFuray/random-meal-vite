@@ -46,7 +46,7 @@ const Header = () => {
                   <div className="hidden md:block">
                     <div className="flex items-baseline ml-10 space-x-4">
                       <div className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <Link to="/">Random Meal</Link>
+                        <Link to="/">Home</Link>
                       </div>
                       <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                         <Link to="/userMeals"> User Meals</Link>
@@ -100,7 +100,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="md:hidden">
+            {/* <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div
                   className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
@@ -127,7 +127,7 @@ const Header = () => {
                   <Link to="/userMeals"> User Meals</Link>
                 </div>
               </div>
-            </div>
+            </div> */}
           </nav>
         </div>
       ) : (
@@ -181,7 +181,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="md:hidden">
+            {/* <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button
                   className="btn btn-accent text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -196,7 +196,7 @@ const Header = () => {
                   <Link to="/register">Register</Link>
                 </button>
               </div>
-            </div>
+            </div> */}
           </nav>
         </div>
       )}

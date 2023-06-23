@@ -17,12 +17,12 @@ const MealCard = ({ meal, savedMeal }) => {
   const closeCommentModal = () => setIsCommentOpen(false)
 
   return (
-    <div className="card w-96 bg-primary bg-opacity-50 shadow-xl">
+    <div className="card w-auto bg-primary bg-opacity-50 shadow-xl">
       <div className="static mt-2 mr-8 ">
         <div className="static">
           <figure className="pl-10 pt-10 hover:cursor-pointer">
             <img
-            onClick={openModal}
+              onClick={openModal}
               src={meal.strMealThumb}
               alt="meal picture"
               className="rounded-xl"
@@ -57,7 +57,8 @@ const MealCard = ({ meal, savedMeal }) => {
         <div>
           <StarRating
             meal={savedMeal}
-            stars={savedMeal.rating} />
+            stars={savedMeal.rating}
+          />
         </div>
         <div className="card-actions">
           <button
