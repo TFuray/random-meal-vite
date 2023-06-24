@@ -1,25 +1,32 @@
 const SearchResponse = ({ data }) => {
-
   return (
     <>
-      <div className="grid grid-cols-3 gap-3 text-xl justify-items-center">
+    {console.log(data)}
+      <div className="overflow-x-auto">
+      <table className="table w-96 mx-auto table-pin-rows table-pin-cols">
+        <thead>
+          <tr>
+            {/* <th></th>
+            <th>Name</th>
+            <th>Servings</th> */}
+            {/* <th>Ingredients</th>
+            <th>Instructions</th> */}
+          </tr>
+        </thead>
         {data.map((data, index) => {
           return (
-            <div
-              className="grid card w-full bg-primary bg-opacity-50 drop-shadow-xl"
-              key={index}
-            >
-              <div className="card-body">
-                <h2 className="card-title font-bold">{data.title}</h2>
-                <p className="text-sm">{data.servings}</p>
-                <h3 className="text-lg font-bold">Ingredients:</h3>
-                <p className=" textarea-md line-clamp-3">{data.ingredients}</p>
-                <h3 className="text-lg font-bold">Instructions:</h3>
-                <p className=" textarea-md line-clamp-3">{data.instructions}</p>
-              </div>
-            </div>
+            <tbody key={index}>
+              <tr>
+                <th>{index + 1}</th>
+                <th className="text-lg">{data.title}</th>
+                <th className="text-lg">{data.servings}</th>
+                {/* <th className="line-clamp-2">{data.ingredients}</th>
+                <th className="line-clamp-2">{data.instructions}</th> */}
+              </tr>
+            </tbody>
           )
         })}
+      </table>
       </div>
     </>
   )
