@@ -62,7 +62,7 @@ const Header = () => {
                               </summary>
                               <ul className="p-2 bg-base-100">
                                 <li className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                                  <Link to="/">Random Meal</Link>
+                                  <Link to="/randommeal">Random Meal</Link>
                                 </li>
                                 <li className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                                   <Link to="/userMeals"> User Meals</Link>
@@ -80,7 +80,7 @@ const Header = () => {
                       </div>
 
                       <div className="text-gray-300 self-center mx-4 hover:text-gray-800 dark:hover:text-white">
-                        <Link to="/search">
+                        <Link to="/">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="1em"

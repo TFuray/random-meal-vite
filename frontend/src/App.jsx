@@ -38,7 +38,7 @@ function App() {
             element={<ShareMeal />}
           />
           <Route
-            path="/search"
+            path="/randommeal"
             element={<Dashboard />}
           />
         </Routes>

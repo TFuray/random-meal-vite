@@ -1,0 +1,50 @@
+css .blink {
+  display: inline-block;
+  animation: blink 1s infinite;
+}
+.blinkPadding {
+  padding-left: 22px;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.letterContainer {
+  display: inline-block;
+  /* overflow: hidden; */
+  /* height: 22px; */
+}
+.letterStatic {
+  display: block;
+}
+.letterAnimTop {
+  display: block;
+  animation: letterAnimTop 0.3s;
+}
+.letterAnimBottom {
+  display: block;
+  animation: letterAnimBottom 0.3s;
+}
+@keyframes letterAnimTop {
+  0% {
+    transform: translateY(-22px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes letterAnimBottom {
+  0% {
+    transform: translateY(22px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

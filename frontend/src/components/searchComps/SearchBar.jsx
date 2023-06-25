@@ -1,5 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
+import "./CSS/searchBarCss.css"
+import TypingEffect from "./JS/TypingEffect"
 import SearchResponse from "./SearchResponse"
 
 const SearchBar = () => {
@@ -23,16 +25,18 @@ const SearchBar = () => {
   }
   return (
     <>
-      <div id="container" className="w-96 my-12 mx-auto justify-center flex flex-col">
+      {/* <div
+      // className="w-96 my-12 mx-auto justify-center flex flex-col"
+      > */}
         <form onSubmit={onSubmit}>
-          <input
-            id="query"
+           <input
+            // id="hiddenInput"
             name="query"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             type="text"
             placeholder="Search recipes"
-            className="input input-bordered input-primary w-full max-w-xs"
+            // className="input input-bordered input-primary w-full max-w-xs"
           />
           <button
             type="submit"
@@ -41,7 +45,9 @@ const SearchBar = () => {
             Go
           </button>
         </form>
-      </div>
+        {/* <div className="flex just">
+        <TypingEffect />
+      </div> */}
       <div>{searchData ? <SearchResponse data={searchData} /> : null}</div>
     </>
   )
