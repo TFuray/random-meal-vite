@@ -1,32 +1,29 @@
 const SearchResponse = ({ data }) => {
   return (
     <>
-    {console.log(data)}
-      <div className="overflow-x-auto">
-      <table className="table w-96 mx-auto table-pin-rows table-pin-cols">
-        <thead>
-          <tr>
-            {/* <th></th>
-            <th>Name</th>
-            <th>Servings</th> */}
-            {/* <th>Ingredients</th>
-            <th>Instructions</th> */}
-          </tr>
-        </thead>
-        {data.map((data, index) => {
+      <div className="grid grid-cols-3 gap-4">
+        {data.map((meal) => {
           return (
-            <tbody key={index}>
-              <tr>
-                <th>{index + 1}</th>
-                <th className="text-lg">{data.title}</th>
-                <th className="text-lg">{data.servings}</th>
-                {/* <th className="line-clamp-2">{data.ingredients}</th>
-                <th className="line-clamp-2">{data.instructions}</th> */}
-              </tr>
-            </tbody>
+            <div className="card card-compact w-auto bg-info-content shadow-xl">
+              <figure>
+                <img
+                  src={meal.strMealThumb}
+                  alt="meal image"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title m-0">
+                  {meal.strMeal} -
+                  <span className="text-sm font-normal -m-0">{meal.strArea}
+                  </span>
+                </h2>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Buy Now</button>
+                </div>
+              </div>
+            </div>
           )
         })}
-      </table>
       </div>
     </>
   )

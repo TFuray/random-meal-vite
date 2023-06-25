@@ -43,30 +43,55 @@ const Header = () => {
                       <Link to="/"> What's for Dinner?</Link>
                     </h1>
                   </div>
-                  <div className="hidden md:block">
+
+                  <div className="z-[100]">
                     <div className="flex items-baseline ml-10 space-x-4">
-                      <div className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <Link to="/">Random Meal</Link>
+                      <div className="flex-none">
+                        <ul className="menu menu-horizontal px-1">
+                          <li>
+                            <details>
+                              <summary>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  height="2em"
+                                  viewBox="0 0 448 512"
+                                  fill="white"
+                                >
+                                  <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                                </svg>
+                              </summary>
+                              <ul className="p-2 bg-base-100">
+                                <li className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                  <Link to="/">Random Meal</Link>
+                                </li>
+                                <li className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                  <Link to="/userMeals"> User Meals</Link>
+                                </li>
+                                <li className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                  <Link to="/savedMeals"> Saved Meals</Link>
+                                </li>
+                                <li className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                  <Link to="/shareMeal"> Share Meal</Link>
+                                </li>
+                              </ul>
+                            </details>
+                          </li>
+                        </ul>
                       </div>
-                      <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <Link to="/userMeals"> User Meals</Link>
-                      </div>
-                      <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <Link to="/savedMeals"> Saved Meals</Link>
-                      </div>
-                      <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                        <Link to="/shareMeal"> Share Meal</Link>
-                      </div>
-                      <div className="text-gray-300 self-center hover:text-gray-800 dark:hover:text-white">
+
+                      <div className="text-gray-300 self-center mx-4 hover:text-gray-800 dark:hover:text-white">
                         <Link to="/search">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
+                            width="1em"
+                            height="1em"
                             fill="currentColor"
-                            className="bi bi-search"
+                            viewBox="0 0 80 "
                           >
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />{" "}
+                            <path
+                              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                              stroke="white"
+                            />
                           </svg>
                         </Link>
                       </div>
@@ -81,53 +106,8 @@ const Header = () => {
                     </div>
                   </div>
                 </div>
-                <div className="block">
-                  <div className="flex items-center ml-4 md:ml-6"></div>
-                </div>
-                <div className="flex -mr-2 md:hidden">
-                  <button className="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
-                    <svg
-                      width={20}
-                      height={20}
-                      fill="currentColor"
-                      className="w-8 h-8"
-                      viewBox="0 0 1792 1792"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path>
-                    </svg>
-                  </button>
-                </div>
               </div>
             </div>
-            {/* <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <div
-                  className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  href="/#"
-                >
-                  <Link to="/">Random Meal</Link>
-                </div>
-                <div
-                  className="text-gray-800 dark:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  href="/#"
-                >
-                  <Link to="/savedMeals"> Saved Meals</Link>{" "}
-                </div>
-                <div
-                  className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  href="/#"
-                >
-                  <Link to="/shareMeal"> Share Meal</Link>
-                </div>
-                <div
-                  className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                  href="/#"
-                >
-                  <Link to="/userMeals"> User Meals</Link>
-                </div>
-              </div>
-            </div> */}
           </nav>
         </div>
       ) : (
@@ -181,7 +161,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="md:hidden">
+            <div className="md:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <button
                   className="btn btn-accent text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -196,7 +176,7 @@ const Header = () => {
                   <Link to="/register">Register</Link>
                 </button>
               </div>
-            </div> */}
+            </div>
           </nav>
         </div>
       )}
