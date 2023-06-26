@@ -1,4 +1,4 @@
-css .blink {
+.blink {
   display: inline-block;
   animation: blink 1s infinite;
 }
@@ -18,8 +18,8 @@ css .blink {
 }
 .letterContainer {
   display: inline-block;
-  /* overflow: hidden; */
-  /* height: 22px; */
+  overflow: visible;
+  height: 22px;
 }
 .letterStatic {
   display: block;

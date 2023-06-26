@@ -1,82 +1,8 @@
-// import { useState, useEffect } from "react"
-// import "../CSS/TypingEffect.css"
-// import "../CSS/searchBarCss.css"
-
-// const TypingEffect = () => {
-//   const [targetContent, setTargetContent] = useState("")
-//   const [content, setContent] = useState([])
-//   const [lastContent, setLastContent] = useState("")
-//   const [inputLock, setInputLock] = useState(false)
-//   const [blinkPadding, setBlinkPadding] = useState(false)
-//   useEffect(() => {
-//     const autoWriteTimer = setTimeout(() => {
-//       if (lastContent !== "") return
-//       setTargetContent("type something...")
-//       refresh()
-//     }, 1000)
-//     return () => clearTimeout(autoWriteTimer)
-//   }, [lastContent])
-//   const handleHiddenInputChange = (e) => {
-//     e.preventDefault()
-//     setTargetContent(e.target.value)
-//     if (!inputLock) {
-//       refresh()
-//     }
-//   }
-//   const refresh = () => {
-//     setInputLock(true)
-//     if (targetContent.length - lastContent.length === 0) {
-//       return
-//     }
-//     const v = targetContent.substring(0, lastContent.length + 1)
-//     const newContent = []
-//     let newBlinkPadding = false
-//     for (let i = 0; i < v.length; i++) {
-//       const l = v.charAt(i)
-//       const animClass = i % 2 === 0 ? "letterAnimTop" : "letterAnimBottom"
-//       const letterClass =
-//         lastContent.charAt(i) === l ? "letterStatic" : animClass
-//       if (letterClass !== "letterStatic") newBlinkPadding = true
-//       newContent.push({
-//         letter: l,
-//         letterClass,
-//       })
-//     }
-//     setContent(newContent)
-//     setLastContent(v)
-//     setBlinkPadding(newBlinkPadding)
-//     if (targetContent.length - lastContent.length > 1) {
-//       setTimeout(refresh, 150)
-//     } else {
-//       setInputLock(false)
-//     }
-//   }
-//   return (
-//     <div>
-//       <div>
-//         {content.map((item, index) => (
-//           <div
-//             key={index}
-//             className="letterContainer"
-//           >
-//             <div className={item.letterClass}>{item.letter}</div>
-//           </div>
-//         ))}
-//         <span className={`blink ${blinkPadding ? "blinkPadding" : ""}`}>|</span>
-//       </div>
-//       <input
-//         id="hiddenInput"
-//         type="text"
-//         onChange={handleHiddenInputChange}
-//       />
-//     </div>
-//   )
-// }
-// export default TypingEffect
-
+import axios from "axios"
 import { Component } from "react"
 import "../CSS/TypingEffect.css"
 import "../CSS/searchBarCss.css"
+import SearchResponse from "../SearchResponse"
 
 class TypingEffect extends Component {
   state = {
@@ -89,7 +15,7 @@ class TypingEffect extends Component {
   componentDidMount() {
     this.autoWriteTimer = setTimeout(() => {
       if (this.state.lastContent !== "") return
-      this.setState({ targetContent: "type something..." }, () => {
+      this.setState({ targetContent: "Enter Dish Name or Keyword..." }, () => {
         this.refresh()
       })
     }, 500)
@@ -146,31 +72,65 @@ class TypingEffect extends Component {
       )
     })
   }
+  search = async () => {
+    try {
+      const response = await axios.get(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${this.state.targetContent}`
+      )
+      console.log(response.data.meals)
+      this.setState({ searchData: response.data.meals })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
+  onSubmit = (e) => {
+    e.preventDefault()
+    this.search()
+  }
   render() {
-    const { content, blinkPadding } = this.state
+    const { content, blinkPadding, targetContent, searchData } = this.state
 
     return (
-      <div className="text-[40px] ">
-        <div>
-          {content.map((item, index) => (
-            <div
-              key={index}
-              className="letterContainer"
-            >
-              <div className={item.letterClass}>{item.letter}</div>
+      <>
+        <div
+            // className="grid grid-cols-auto gap-4"
+>
+          <form
+            className=" col-start-2 my-12"
+            onSubmit={this.onSubmit}
+          >
+            <div id="input" className="typingEffect">
+              <div>
+                {content.map((item, index) => (
+                  <div
+                    key={index}
+                    className="letterContainer"
+                  >
+                    <div className={item.letterClass}>{item.letter}</div>
+                  </div>
+                ))}
+                <span className={`blink ${blinkPadding ? "blinkPadding" : ""}`}>
+                  |
+                </span>
+              </div>
+              <input
+                id="hiddenInput"
+                type="text"
+                value={this.targetContent}
+                onChange={this.handleHiddenInputChange}
+              />
             </div>
-          ))}
-          <span className={`blink ${blinkPadding ? "blinkPadding" : ""}`}>
-            |
-          </span>
+            <button
+              className="btn btn-circle btn-primary"
+              type="submit"
+            ></button>
+          </form>
         </div>
-        <input
-          id="hiddenInput"
-          type="text"
-          onChange={this.handleHiddenInputChange}
-        />
-      </div>
+        <div>
+          <div>{searchData ? <SearchResponse data={searchData} /> : null}</div>
+        </div>
+      </>
     )
   }
 }
