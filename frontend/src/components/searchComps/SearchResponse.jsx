@@ -1,7 +1,6 @@
 import MealCard from "../savedMealComps/MealCard"
 
 const SearchResponse = ({ data }) => {
-  console.log(data)
   return (
     <>
       <div className="grid grid-cols-3 gap-4">

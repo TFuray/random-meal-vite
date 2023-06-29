@@ -16,9 +16,6 @@ const MealCard = ({ meal, savedMeal }) => {
   const openCommentModal = () => setIsCommentOpen(true)
   const closeCommentModal = () => setIsCommentOpen(false)
 
-  console.log(meal)
-  console.log(savedMeal)
-
   return (
     <>
       {savedMeal ? (
