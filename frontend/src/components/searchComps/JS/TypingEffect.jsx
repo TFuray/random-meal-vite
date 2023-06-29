@@ -1,5 +1,6 @@
 import axios from "axios"
 import { Component } from "react"
+import { Link } from "react-router-dom"
 import "../CSS/TypingEffect.css"
 import "../CSS/searchBarCss.css"
 import SearchResponse from "../SearchResponse"
@@ -93,14 +94,15 @@ class TypingEffect extends Component {
 
     return (
       <>
-        <div
-            // className="grid grid-cols-auto gap-4"
->
+        <div className="flex justify-center mb-4">
           <form
-            className=" col-start-2 my-12"
+            // className=" flex flex-grow my-12"
             onSubmit={this.onSubmit}
           >
-            <div id="input" className="typingEffect">
+            <div
+              id="input"
+              className="typingEffect"
+            >
               <div>
                 {content.map((item, index) => (
                   <div
@@ -121,12 +123,20 @@ class TypingEffect extends Component {
                 onChange={this.handleHiddenInputChange}
               />
             </div>
-            <button
-              className="btn btn-circle btn-primary"
-              type="submit"
-            ></button>
+            <div className="flex justify-center gap-3">
+              <button
+                className="btn btn-neutral"
+                type="submit"
+              >
+               Search
+              </button>
+              <button className="btn btn-neutral">
+                  <Link to='/randommeal'>Random</Link>
+              </button>
+            </div>
           </form>
         </div>
+
         <div>
           <div>{searchData ? <SearchResponse data={searchData} /> : null}</div>
         </div>
