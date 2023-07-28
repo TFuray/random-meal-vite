@@ -11,8 +11,18 @@ const getSavedMeals = async (token) => {
       Authorization: `Bearer ${token}`
     }
   }
-
   const response = await axios.get(API_URL, config)
+  return response.data
+}
+
+// Get User Meal
+const getUserMeal = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.get(`${API_URL}users/`, config)
   return response.data
 }
 
@@ -66,7 +76,8 @@ const mealService = {
   saveMeal,
   newMeal,
   deleteMeal,
-  updateRating
+  updateRating,
+  getUserMeal,
 }
 
 export default mealService

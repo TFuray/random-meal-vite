@@ -19,7 +19,7 @@ const Header = () => {
     <>
       {user ? (
         <div>
-          <nav className="bg-base-300 shadow ">
+          <nav className="bg-base-200 shadow ">
             <div className="px-8 mx-auto max-w-7xl">
               <div className="flex items-center justify-between h-16">
                 <div className="w-full justify-between flex items-center">
@@ -44,8 +44,8 @@ const Header = () => {
                     </h1>
                   </div>
 
-                  <div className="z-[100]">
-                    <div className="flex items-baseline ml-10 space-x-4">
+                  <div className="z-[8]">
+                    <div className="flex items-center ml-10 space-x-4">
                       <div className="flex-none">
                         <ul className="menu menu-horizontal px-1">
                           <li>

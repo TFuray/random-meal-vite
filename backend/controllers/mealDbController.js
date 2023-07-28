@@ -30,6 +30,13 @@ const getSavedMeals = asyncHandler(async (req, res) => {
   res.status(200).json(meals)
 })
 
+//@desc ...... Get User meals
+//@rout ...... GET /api/meals/users
+const getUserMeals = asyncHandler(async (req, res) => {
+  const meals = await NewMeal.find()
+  res.status(200).json(meals)
+})
+
 // @desc  set saved meal
 // @route POST /api/meals/
 const saveMeal = asyncHandler(async (req, res) => {
@@ -67,5 +74,6 @@ module.exports = {
   getSavedMeals,
   setMeal,
   deleteMeal,
-  setRating
+  setRating,
+  getUserMeals
 }

@@ -9,6 +9,7 @@ import Register from "./pages/Register"
 import SavedMeals from "./pages/SavedMeals"
 import Search from "./pages/Search"
 import ShareMeal from "./pages/ShareMeal"
+import UserMeals from "./pages/UserMeals"
 
 function App() {
   return (
@@ -40,6 +41,10 @@ function App() {
           <Route
             path="/randommeal"
             element={<Dashboard />}
+          />
+          <Route
+            path="/userMeals"
+            element={<UserMeals/>}
           />
         </Routes>
         <Footer />

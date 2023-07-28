@@ -16,7 +16,7 @@ class TypingEffect extends Component {
   componentDidMount() {
     this.autoWriteTimer = setTimeout(() => {
       if (this.state.lastContent !== "") return
-      this.setState({ targetContent: "Enter Dish Name or Keyword..." }, () => {
+      this.setState({ targetContent: "Enter Dish or Ingredients..." }, () => {
         this.refresh()
       })
     }, 500)
@@ -123,15 +123,15 @@ class TypingEffect extends Component {
                 onChange={this.handleHiddenInputChange}
               />
             </div>
-            <div className="flex justify-center gap-3">
+            <div className="flex justify-center gap-3 mt-2">
               <button
-                className="btn btn-neutral"
+                className="btn btn-primary"
                 type="submit"
               >
-               Search
+                Search
               </button>
-              <button className="btn btn-neutral">
-                  <Link to='/randommeal'>Random</Link>
+              <button className="btn btn-secondary">
+                <Link to="/randommeal">Random</Link>
               </button>
             </div>
           </form>
