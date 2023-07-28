@@ -7,7 +7,7 @@ const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector((state) => state.auth)
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState("buisness")
 
   const onLogout = () => {
     dispatch(logout())

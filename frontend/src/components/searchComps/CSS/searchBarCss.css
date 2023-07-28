@@ -2,7 +2,7 @@
 
 div#input.typingEffect {
   margin-top: 30px;
-  background-color: black;
+  background-color: rgb(231, 0, 0);
   align-self: center;
   border-radius: 1rem;
   padding-left: 12px;
@@ -30,11 +30,11 @@ div#input.typingEffect {
   left: 50%;
 }
 
-#input {
-  /* position: absolute; */
-  /* margin-top: -20px; */
-  /* margin-left: -120px; */
-}
+/* #input {
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -120px;
+} */
 
 .letterContainer {
   display: inline;
