@@ -125,12 +125,12 @@ class TypingEffect extends Component {
             </div>
             <div className="flex justify-center gap-3 mt-2">
               <button
-                className="btn btn-primary"
+                className="btn btn-primary rounded-xl"
                 type="submit"
               >
                 Search
               </button>
-              <button className="btn btn-secondary">
+              <button className="btn btn-secondary  rounded-xl">
                 <Link to="/randommeal">Random</Link>
               </button>
             </div>
