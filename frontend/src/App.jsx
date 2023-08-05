@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css"
 import Footer from "./components/generalComps/Footer"
 import Header from "./components/generalComps/Header"
 import Dashboard from "./pages/Dashboard"
+import Landing from "./pages/Landing"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import SavedMeals from "./pages/SavedMeals"
@@ -18,6 +19,10 @@ function App() {
         <Header />
         {/* <DashboardShell /> */}
         <Routes>
+          <Route
+            path="/Landing"
+            element={<Landing />}
+          />
           <Route
             path="/"
             element={<Search />}
@@ -44,7 +49,7 @@ function App() {
           />
           <Route
             path="/userMeals"
-            element={<UserMeals/>}
+            element={<UserMeals />}
           />
         </Routes>
         <Footer />
