@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { logout, reset } from "../../features/auth/authSlice"
+import LoginRegisterBtn from "./LoginRegisterBtn"
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -126,18 +127,7 @@ const Header = () => {
                   </div>
                   <div className="hidden md:block">
                     <div className="flex items-baseline ml-10 space-x-4">
-                      <button
-                        className="btn btn-accent text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        href="/#"
-                      >
-                        <Link to="/login"> Login</Link>
-                      </button>{" "}
-                      <button
-                        className="btn text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                        href="/#"
-                      >
-                        <Link to="/register">Register</Link>
-                      </button>
+                    <LoginRegisterBtn/>
                     </div>
                   </div>
                 </div>

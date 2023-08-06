@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import LoginRegisterBtn from "../components/generalComps/LoginRegisterBtn"
 
 const Landing = () => {
   const navigate = useNavigate()
@@ -39,8 +41,6 @@ const Landing = () => {
                   version="1.1"
                   x="0px"
                   y="0px"
-                  // style={{ enableBackground: "new 0 0 100 100" }}
-                  // style={{ backgroundSize: '30px 30px' }}
                   xmlSpace="preserve"
                   className="ml-auto"
                 >
@@ -53,7 +53,11 @@ const Landing = () => {
                       height={1}
                     />
                     <g i:extraneous="self">
-                      <path d="M56.4,94.8L84.3,67c3.6-3.6,3.6-9.3,0-12.9c-3.6-3.6-9.3-3.6-12.9,0L59.1,66.4V11.6c0-5-4.1-9.1-9.1-9.1s-9.1,4.1-9.1,9.1    v54.8L28.6,54.2c-3.6-3.6-9.3-3.6-12.9,0c-1.8,1.8-2.7,4.1-2.7,6.4c0,2.3,0.9,4.7,2.7,6.4l27.8,27.8c1.7,1.7,4,2.7,6.4,2.7    S54.7,96.5,56.4,94.8z" />
+                      <path
+                        className="drop-shadow-3xl"
+                        fill="white"
+                        d="M56.4,94.8L84.3,67c3.6-3.6,3.6-9.3,0-12.9c-3.6-3.6-9.3-3.6-12.9,0L59.1,66.4V11.6c0-5-4.1-9.1-9.1-9.1s-9.1,4.1-9.1,9.1    v54.8L28.6,54.2c-3.6-3.6-9.3-3.6-12.9,0c-1.8,1.8-2.7,4.1-2.7,6.4c0,2.3,0.9,4.7,2.7,6.4l27.8,27.8c1.7,1.7,4,2.7,6.4,2.7    S54.7,96.5,56.4,94.8z"
+                      />
                     </g>
                   </switch>
                 </svg>
@@ -81,12 +85,21 @@ const Landing = () => {
                   tincidunt vehicula. Fusce sit amet dui tellus.
                 </p>
                 <div className="w-full md:w-1/3">
-                  <button
-                    type="button"
-                    className="py-2 px-4 btn btn-secondary text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-                  >
-                    See more
-                  </button>
+                  <div className="flex items-baseline ml-10 space-x-4">
+                    <LoginRegisterBtn/>
+                    {/* <button
+                      className="btn btn-accent text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      href="/#"
+                    >
+                      <Link to="/login"> Login</Link>
+                    </button>
+                    <button
+                      className="btn btn-secondary text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      href="/#"
+                    >
+                      <Link to="/register">Register</Link>
+                    </button> */}
+                  </div>
                 </div>
               </div>
             </div>
