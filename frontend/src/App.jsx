@@ -20,11 +20,11 @@ function App() {
         {/* <DashboardShell /> */}
         <Routes>
           <Route
-            path="/Landing"
+            path="/"
             element={<Landing />}
           />
           <Route
-            path="/"
+            path="/search"
             element={<Search />}
           />
           <Route
