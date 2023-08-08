@@ -156,7 +156,7 @@ const Header = () => {
                   className="btn btn-accent text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   href="/#"
                 >
-                  <Link to="/login"> Login</Link>
+                  <Link id="login" to="/login"> Login</Link>
                 </button>{" "}
                 <button
                   className="btn text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
